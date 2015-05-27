@@ -22,7 +22,7 @@
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bMp-gO-4pW">
                                             <rect key="frame" x="271" y="4" width="51" height="31"/>
                                             <connections>
-                                                <action selector="switchToggledMethod1:" destination="53V-TG-qu2" eventType="valueChanged" id="WRO-X8-Dtr"/>
+                                                <action selector="switchToggledMethod:" destination="53V-TG-qu2" eventType="valueChanged" id="iew-C7-f26"/>
                                             </connections>
                                         </switch>
                                     </subviews>
@@ -33,18 +33,16 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="switchControl" destination="bMp-gO-4pW" id="SXH-yT-Paq"/>
-                                    <outlet property="view" destination="G3c-4T-lfl" id="gZ8-CR-44P"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="9iF-GF-RlS" id="Qmr-md-hUu"/>
+                            <outlet property="dataSource" destination="JIk-E4-j9Z" id="LXC-1l-BYr"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="zCm-aL-vOg"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTr-pG-dhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="9iF-GF-RlS" customClass="CellDataSource"/>
             </objects>
             <point key="canvasLocation" x="-508" y="-94"/>
         </scene>

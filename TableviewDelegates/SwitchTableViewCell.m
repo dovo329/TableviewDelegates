@@ -25,8 +25,8 @@
     // Configure the view for the selected state
 }
 
-- (IBAction)switchToggledMethod1:(id)sender {
-    [self.delegate cellSwitchToggled:nil cell:nil];
+- (IBAction)switchToggledMethod:(id)sender {
+    [self.delegate cellSwitchToggled:self.switchControl cell:self];
 }
 
 @end

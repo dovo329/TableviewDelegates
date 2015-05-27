@@ -30,16 +30,14 @@ typedef NS_ENUM(int, sectionType) {
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.tableView.dataSource = self;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     switch (section) {
-        case section1: return 1; break;
+        case section1: return 2; break;
         case section2: return 2; break;
-        case section3: return 3; break;
+        case section3: return 2; break;
         default: return 0; break;
     }
 }

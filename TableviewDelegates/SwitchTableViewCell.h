@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) id<SwitchTableViewCellDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UISwitch *switchControl;
-@property (weak, nonatomic) IBOutlet UIView *view;
+
 
 + (NSString *)reuseIdentifier;
 
