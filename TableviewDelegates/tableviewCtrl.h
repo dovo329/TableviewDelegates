@@ -10,4 +10,6 @@
 
 @interface tableviewCtrl : UITableViewController
 
+@property (nonatomic, strong) NSMutableArray *switchStateArr;
+
 @end

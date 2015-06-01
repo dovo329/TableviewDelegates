@@ -30,6 +30,11 @@ typedef NS_ENUM(int, sectionType) {
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.switchStateArr = [[NSMutableArray alloc] initWithCapacity:6];
+    for (int i=0; i<6; i++)
+    {
+        self.switchStateArr[i] = [NSNumber numberWithBool:NO];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -45,7 +50,13 @@ typedef NS_ENUM(int, sectionType) {
 - (void)cellSwitchToggled:(UISwitch *)toggle cell:(SwitchTableViewCell *)cell
 {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
-    NSLog(@"switch toggled to state %d at row %d", toggle.on, indexPath.row);
+    NSLog(@"switch toggled to state %d at row %d and section %d", toggle.on, indexPath.row, indexPath.section);
+    self.switchStateArr[(indexPath.section*2)+indexPath.row] = [NSNumber numberWithBool:toggle.on];
+    
+    for (int i=0; i<[self.switchStateArr count]; i++)
+    {
+        NSLog(@"self.switchStateArr[%d]==%@", i, self.switchStateArr[i]);
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -55,6 +66,7 @@ typedef NS_ENUM(int, sectionType) {
         cell = [[SwitchTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:[SwitchTableViewCell reuseIdentifier]];
     }
     cell.textLabel.text = [[CellDataSource sharedInstance] stringForIndexPath:indexPath];
+    cell.switchControl.on = NO;
     cell.delegate = self;
     return cell;
 }
