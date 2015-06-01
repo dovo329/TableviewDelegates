@@ -44,7 +44,8 @@ typedef NS_ENUM(int, sectionType) {
 
 - (void)cellSwitchToggled:(UISwitch *)toggle cell:(SwitchTableViewCell *)cell
 {
-    NSLog(@"switch toggled");
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    NSLog(@"switch toggled to state %d at row %d", toggle.on, indexPath.row);
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
